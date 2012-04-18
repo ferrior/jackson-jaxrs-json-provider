@@ -9,7 +9,8 @@ Description:
 Fixes:
 
 * Changed 'jaxrs-311' dependeny from 'compile' to 'provided'
-
+* SPI (META-INF/services/) fixed so auto-registration should now work
+ (contributed by Simone T)
 
 ------------------------------------------------------------------------
 === History: ===
