@@ -68,7 +68,8 @@ public class EndpointConfig
     
     protected EndpointConfig add(Annotation[] annotations, boolean forWriting)
     {
-        for (Annotation annotation : annotations) {
+    	if (annotations != null) {
+          for (Annotation annotation : annotations) {
             Class<?> type = annotation.annotationType();
             if (type == JSONP.class) {
                 if (forWriting) {
@@ -98,7 +99,8 @@ public class EndpointConfig
                     add(type.getAnnotations(), forWriting);
                 }
             }
-        }
+          }
+    	}
         return this;
     }
 

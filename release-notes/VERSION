@@ -8,9 +8,11 @@ Description:
 
 Fixes:
 
-* Changed 'jaxrs-311' dependeny from 'compile' to 'provided'
+* Changed 'jaxrs-311' dependency from 'compile' to 'provided'
 * SPI (META-INF/services/) fixed so auto-registration should now work
  (contributed by Simone T)
+* Issue-10: NPE in EndpointConfig, if JAX-RS container passes null
+  set of Annotations to writeTo()
 
 ------------------------------------------------------------------------
 === History: ===
