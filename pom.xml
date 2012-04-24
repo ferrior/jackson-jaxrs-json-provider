@@ -39,6 +39,8 @@
   </scm>
 
   <properties>
+    <javac.src.version>1.5</javac.src.version>
+    <javac.target.version>1.5</javac.target.version>
     <osgi.export>${project.groupId}.json.*;version=${project.version}</osgi.export>
     <osgi.import>javax.ws.rs
 ,javax.ws.rs.core
@@ -59,18 +61,18 @@
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-core</artifactId>
-      <version>2.0.0</version>
+      <version>2.0.1</version>
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
-      <version>2.0.0</version>
+      <version>2.0.1</version>
     </dependency>
     <!-- also need JAXB annotation support -->
     <dependency> 
       <groupId>com.fasterxml.jackson.module</groupId>
       <artifactId>jackson-module-jaxb-annotations</artifactId>
-      <version>2.0.0</version>
+      <version>2.0.1</version>
     </dependency>
 
     <!-- and we need JAX-RS annotations as well; but usually provided by container
