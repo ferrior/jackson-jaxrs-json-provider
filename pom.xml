@@ -92,17 +92,21 @@
       <version>4.10</version>
       <scope>test</scope>
     </dependency>
-    <!--  and for some reason actual JAX-RS impl too -->
+    <!-- tests require JAX-RS impl; otherwise components fail to load
+        (some oddity with API classes; should NOT be needed...)
+
+        NOTE: use 1.2 as that's JDK 1.5; later (1.8) versions need JDK 1.6
+      -->
     <dependency>
       <groupId>com.sun.jersey</groupId>
       <artifactId>jersey-core</artifactId>
-      <version>1.8</version>
+      <version>1.2</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.sun.jersey</groupId>
       <artifactId>jersey-server</artifactId>
-      <version>1.8</version>
+      <version>1.2</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
