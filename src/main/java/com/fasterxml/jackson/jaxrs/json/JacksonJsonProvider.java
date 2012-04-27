@@ -92,8 +92,12 @@ public class JacksonJsonProvider
         /* 28-Jan-2012, tatu: 1.x excluded some additional types;
          *   but let's relax these a bit:
          */
-        //_untouchables.add(new ClassKey(String.class));
-        //_untouchables.add(new ClassKey(byte[].class));
+        /* 27-Apr-2012, tatu: Ugh. As per
+         *   [https://github.com/FasterXML/jackson-jaxrs-json-provider/issues/12]
+         *  better revert this back, to make them untouchable again.
+         */
+        _untouchables.add(new ClassKey(String.class));
+        _untouchables.add(new ClassKey(byte[].class));
 
         // Then core JAX-RS things
         _untouchables.add(new ClassKey(StreamingOutput.class));
