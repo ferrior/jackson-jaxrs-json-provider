@@ -8,15 +8,25 @@ Description:
 
 Fixes:
 
+* [Issue-11] Change JAXB annotation module dependency to optional
+  for OSGi
+* [Issue-12] Revert untouchable change to 1.x compatible; so that
+  'String' and 'byte[]' are again "untouchable" (JSON provider will NOT
+  try to convert them)
+
+------------------------------------------------------------------------
+=== History: ===
+------------------------------------------------------------------------
+
+2.0.1 [23-Apr-2012]
+
+Fixes:
+
 * Changed 'jaxrs-311' dependency from 'compile' to 'provided'
 * SPI (META-INF/services/) fixed so auto-registration should now work
  (contributed by Simone T)
 * Issue-10: NPE in EndpointConfig, if JAX-RS container passes null
   set of Annotations to writeTo()
-
-------------------------------------------------------------------------
-=== History: ===
-------------------------------------------------------------------------
 
 2.0.0 [25-Mar-2012]
 

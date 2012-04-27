@@ -41,7 +41,8 @@ public class TestUntouchables
         assertFalse(prov.isWriteable(StreamingOutput.class, StreamingOutput.class, null, null));
 
         // and then on-the-fence things
-        assertTrue(prov.isReadable(String.class, getClass(), null, null));
+        assertFalse(prov.isReadable(String.class, getClass(), null, null));
+        assertFalse(prov.isReadable(byte[].class, getClass(), null, null));
     }
 
     public void testCustomUntouchables() throws Exception

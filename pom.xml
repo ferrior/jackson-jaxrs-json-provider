@@ -42,6 +42,9 @@
     <javac.src.version>1.5</javac.src.version>
     <javac.target.version>1.5</javac.target.version>
     <osgi.export>${project.groupId}.json.*;version=${project.version}</osgi.export>
+    <!-- NOTE: JAXB annotations module is optional dependency, need to try to mark
+         as such here.
+      -->
     <osgi.import>javax.ws.rs
 ,javax.ws.rs.core
 ,javax.ws.rs.ext
@@ -53,7 +56,8 @@
 ,com.fasterxml.jackson.databind.introspect
 ,com.fasterxml.jackson.databind.type
 ,com.fasterxml.jackson.databind.util
-,com.fasterxml.jackson.module.jaxb</osgi.import>
+,com.fasterxml.jackson.module.jaxb;resolution:=optional
+</osgi.import>
   </properties>
 
   <dependencies>
