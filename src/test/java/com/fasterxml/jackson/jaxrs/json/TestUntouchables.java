@@ -1,5 +1,7 @@
 package com.fasterxml.jackson.jaxrs.json;
 
+import java.io.OutputStream;
+import java.lang.annotation.Annotation;
 import java.util.*;
 
 import javax.ws.rs.core.MediaType;
@@ -24,6 +26,10 @@ public class TestUntouchables
          protected boolean isJsonType(MediaType mediaType) { return super.isJsonType(mediaType); }
     }
 
+    static class StreamingSubType implements StreamingOutput {
+        public void write(OutputStream output) { }
+    }
+    
     /*
     /**********************************************************
     /* Unit tests
@@ -34,15 +40,22 @@ public class TestUntouchables
     {
         JacksonJsonProvider prov = new JacksonJsonProvider();
         // By default, no reason to exclude, say, this test class...
-        assertTrue(prov.isReadable(getClass(), getClass(), null, null));
-        assertTrue(prov.isWriteable(getClass(), getClass(), null, null));
+        assertTrue(prov.isReadable(getClass(), getClass(),
+                new Annotation[0], MediaType.APPLICATION_JSON_TYPE));
+        assertTrue(prov.isWriteable(getClass(), getClass(),
+                new Annotation[0], MediaType.APPLICATION_JSON_TYPE));
 
         // but some types should be ignored (set of ignorable may change over time tho!)
-        assertFalse(prov.isWriteable(StreamingOutput.class, StreamingOutput.class, null, null));
+        assertFalse(prov.isWriteable(StreamingOutput.class, StreamingOutput.class,
+                new Annotation[0], MediaType.APPLICATION_JSON_TYPE));
+        assertFalse(prov.isWriteable(StreamingSubType.class, StreamingSubType.class,
+                new Annotation[0], MediaType.APPLICATION_JSON_TYPE));
 
         // and then on-the-fence things
-        assertFalse(prov.isReadable(String.class, getClass(), null, null));
-        assertFalse(prov.isReadable(byte[].class, getClass(), null, null));
+        assertFalse(prov.isReadable(String.class, getClass(),
+                new Annotation[0], MediaType.APPLICATION_JSON_TYPE));
+        assertFalse(prov.isReadable(byte[].class, getClass(),
+                new Annotation[0], MediaType.APPLICATION_JSON_TYPE));
     }
 
     public void testCustomUntouchables() throws Exception
@@ -51,13 +64,17 @@ public class TestUntouchables
         // can mark this as ignorable...
         prov.addUntouchable(getClass());
         // and then it shouldn't be processable
-        assertFalse(prov.isReadable(getClass(), getClass(), null, null));
-        assertFalse(prov.isWriteable(getClass(), getClass(), null, null));
+        assertFalse(prov.isReadable(getClass(), getClass(),
+                new Annotation[0], MediaType.APPLICATION_JSON_TYPE));
+        assertFalse(prov.isWriteable(getClass(), getClass(),
+                new Annotation[0], MediaType.APPLICATION_JSON_TYPE));
 
         // Same for interfaces, like:
         prov.addUntouchable(Collection.class);
-        assertFalse(prov.isReadable(ArrayList.class, ArrayList.class, null, null));
-        assertFalse(prov.isWriteable(HashSet.class, HashSet.class, null, null));
+        assertFalse(prov.isReadable(ArrayList.class, ArrayList.class,
+                new Annotation[0], MediaType.APPLICATION_JSON_TYPE));
+        assertFalse(prov.isWriteable(HashSet.class, HashSet.class,
+                new Annotation[0], MediaType.APPLICATION_JSON_TYPE));
     }
 }
     

@@ -98,10 +98,6 @@ public class JacksonJsonProvider
          */
         _untouchables.add(new ClassKey(String.class));
         _untouchables.add(new ClassKey(byte[].class));
-
-        // Then core JAX-RS things
-        _untouchables.add(new ClassKey(StreamingOutput.class));
-        _untouchables.add(new ClassKey(Response.class));
     }
 
     /**

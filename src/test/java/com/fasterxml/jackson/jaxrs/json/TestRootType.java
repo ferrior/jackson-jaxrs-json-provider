@@ -20,6 +20,12 @@ public class TestRootType
     static class Bean {
         public int a = 3;
     }
+
+    /*
+    /**********************************************************************
+    /* Test methods
+    /**********************************************************************
+     */
     
     public void testRootType() throws Exception
     {
