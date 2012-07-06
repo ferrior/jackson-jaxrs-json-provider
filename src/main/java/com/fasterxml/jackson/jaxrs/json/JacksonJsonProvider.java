@@ -52,8 +52,8 @@ import com.fasterxml.jackson.jaxrs.json.util.ClassKey;
  * @author Tatu Saloranta
  */
 @Provider
-@Consumes({MediaType.APPLICATION_JSON, "text/json"})
-@Produces({MediaType.APPLICATION_JSON, "text/json"})
+@Consumes(MediaType.WILDCARD)
+@Produces(MediaType.WILDCARD)
 public class JacksonJsonProvider
     implements
         MessageBodyReader<Object>,
