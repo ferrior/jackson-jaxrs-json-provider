@@ -1,18 +1,24 @@
-Version: 2.0.4
+Version: 2.0.5
 
 Release date:
-  06-Jul-2012
+  27-Jul-2012
 
 Description:
   A patch release for 2.0
 
-Fixes:
+No fixes, updated dependencies.
 
 ------------------------------------------------------------------------
 === History: ===
 ------------------------------------------------------------------------
 
-(no version 2.0.3 released -- only used for some extension modules)
+2.0.4 (05-Jul-2012)
+
+No fixes, updated dependencies.
+
+2.0.3:
+
+not released  -- only used for some extension modules)
 
 2.0.2 (14-May-2012)
 
