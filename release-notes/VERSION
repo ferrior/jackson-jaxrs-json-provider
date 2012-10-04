@@ -1,16 +1,16 @@
-Version: 2.0.5
+Version: 2.1.0
 
 Release date:
-  27-Jul-2012
+  xx-Oct-2012
 
 Description:
-  A patch release for 2.0
-
-No fixes, updated dependencies.
+  A new minor version.
 
 ------------------------------------------------------------------------
 === History: ===
 ------------------------------------------------------------------------
+
+2.0.5 (27-Jul-2012)
 
 2.0.4 (05-Jul-2012)
 
