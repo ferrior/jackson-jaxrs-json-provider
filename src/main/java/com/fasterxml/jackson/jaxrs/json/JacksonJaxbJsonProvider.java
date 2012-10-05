@@ -22,8 +22,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  * in sync if changed.
  */
 @Provider
-@Consumes({MediaType.APPLICATION_JSON, "text/json"})
-@Produces({MediaType.APPLICATION_JSON, "text/json"})
+@Consumes(MediaType.WILDCARD) // NOTE: required to support "non-standard" JSON variants
+@Produces(MediaType.WILDCARD)
 public class JacksonJaxbJsonProvider extends JacksonJsonProvider {
     /**
      * Default annotation sets to use, if not explicitly defined during

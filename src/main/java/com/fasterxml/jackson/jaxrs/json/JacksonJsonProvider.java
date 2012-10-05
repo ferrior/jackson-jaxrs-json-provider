@@ -52,7 +52,7 @@ import com.fasterxml.jackson.jaxrs.json.util.ClassKey;
  * @author Tatu Saloranta
  */
 @Provider
-@Consumes(MediaType.WILDCARD)
+@Consumes(MediaType.WILDCARD) // NOTE: required to support "non-standard" JSON variants
 @Produces(MediaType.WILDCARD)
 public class JacksonJsonProvider
     implements
