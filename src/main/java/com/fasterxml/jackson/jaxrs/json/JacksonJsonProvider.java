@@ -429,6 +429,7 @@ public class JacksonJsonProvider
 
         if ( firstByte == -1)
             return null;
+        wrappedStream.unread(firstByte);
 
         AnnotationBundleKey key = new AnnotationBundleKey(annotations);
         EndpointConfig endpoint;
