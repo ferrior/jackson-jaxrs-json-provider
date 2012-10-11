@@ -10,7 +10,7 @@ Fixes:
 
 - [Issue#17]: Accept empty content as 'null', instead of throwing an
   EOFException
- (requested by Matt B)
+ (requested by Matt B, cjellick@github)
 
 ------------------------------------------------------------------------
 === History: ===
