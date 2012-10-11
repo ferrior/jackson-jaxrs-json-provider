@@ -1,14 +1,24 @@
-Version: 2.1.0
+Version: 2.1.1
 
 Release date:
-  08-Oct-2012
+  xx-Oct-2012
 
 Description:
-  A new minor version.
+  The first patch release for 2.1.
+
+Fixes:
+
+- [Issue#17]: Accept empty content as 'null', instead of throwing an
+  EOFException
+ (requested by Matt B)
 
 ------------------------------------------------------------------------
 === History: ===
 ------------------------------------------------------------------------
+
+2.1.0 (08-Oct-2012)
+
+No fixes, updated dependencies.
 
 2.0.5 (27-Jul-2012)
 
