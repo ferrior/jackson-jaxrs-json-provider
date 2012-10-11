@@ -424,6 +424,12 @@ public class JacksonJsonProvider
     public Object readFrom(Class<Object> type, Type genericType, Annotation[] annotations, MediaType mediaType, MultivaluedMap<String,String> httpHeaders, InputStream entityStream) 
         throws IOException
     {
+        PushbackInputStream wrappedStream = new PushbackInputStream(entityStream);
+        int firstByte = wrappedStream.read(); 
+
+        if ( firstByte == -1)
+            return null;
+
         AnnotationBundleKey key = new AnnotationBundleKey(annotations);
         EndpointConfig endpoint;
         synchronized (_readers) {
@@ -439,7 +445,7 @@ public class JacksonJsonProvider
             }
         }
         ObjectReader reader = endpoint.getReader();
-        JsonParser jp = reader.getJsonFactory().createJsonParser(entityStream);
+        JsonParser jp = reader.getFactory().createJsonParser(wrappedStream);
         return reader.withType(genericType).readValue(jp);
     }
 
