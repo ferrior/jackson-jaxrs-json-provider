@@ -4,6 +4,8 @@ This Jackson extension adds JSON reading/writing support for JAX-RS implementati
 This is done by class `JacksonJsonProvider` implementing `javax.ws.rs.ext.MessageBodyReader` and `javax.ws.rs.ext.MessageBodyWriter` that JAX-RS defines for pluggable support for data formats. 
 `JacksonJsonProvider` (and `JacksonJaxbJsonProvider`) can then be registered with JAX-RS container to make Jackson the standard JSON reader/writer provider.
 
+[![Build Status](https://fasterxml.ci.cloudbees.com/job/jackson-jaxrs-json-provider-master/badge/icon)](https://fasterxml.ci.cloudbees.com/job/jackson-jaxrs-json-provider-master/)
+
 ## Status
 
 Module is fully usable, but since it was refactored as part of Jackson 2.0 project, it depends on Jackson 2.0 API.
