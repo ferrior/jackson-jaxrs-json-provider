@@ -18,7 +18,7 @@ To use this extension on Maven-based projects, use following dependency:
     <dependency>
       <groupId>com.fasterxml.jackson.jaxrs</groupId>
       <artifactId>jackson-jaxrs-json-provider</artifactId>
-      <version>2.0.4</version>
+      <version>2.1.1</version>
     </dependency>
 
 (or whatever version is most up-to-date at the moment)
