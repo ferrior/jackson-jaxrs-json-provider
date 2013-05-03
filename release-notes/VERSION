@@ -1,5 +1,5 @@
 Project: jackson-jaxrs-json-provider
-Version: 2.1.5 (xx-Mar-2013)
+Version: 2.1.5 (02-May-2013)
 
 * [JACKSON-891]: AnnotationBundle#hashCode() missing
  (reported by Chris H)
